@@ -24,6 +24,7 @@
         "power-profiles-daemon",
         "backlight",
         "battery",
+        "bluetooth",
         "cpu",
         "memory",
         "temperature",
@@ -132,6 +133,16 @@
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["\uf2cb", "\uf2ca", "\uf2c9", "\uf2c8", "\uf2c7"]
+    },
+    "bluetooth": {
+        "format": "\uf293",
+        "format-off": "\uf293 off",
+        "format-disabled": "\uf293 off",
+        "format-connected": "\uf293 {num_connections}",
+        "tooltip-format": "{controller_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "kitty -e bluetui"
     },
     "backlight": {
         // "device": "acpi_video1",
