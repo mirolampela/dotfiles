@@ -22,19 +22,30 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "DP-1",
-    mode     = "3440x1440@180.00Hz",
-    position = "1920x0",
-    scale    = 1
-})
-hl.monitor({
-    output   = "DP-2",
-    mode     = "1920x1080@144.00Hz",
-    position = "0x0",
-    scale    = 1
-})
 
+-- Load machine-specific settings from hosts/<hostname>.lua
+local function get_hostname()
+    local f = io.open("/etc/hostname", "r")
+    if not f then return nil end
+    local name = f:read("*l")
+    f:close()
+    return name
+end
+
+package.path = os.getenv("HOME") .. "/.config/hypr/?.lua;" .. package.path
+
+local hostname = get_hostname()
+local loaded = hostname and pcall(require, "hosts." .. hostname)
+
+-- Fallback for unknown machines
+if not loaded then
+    hl.monitor({
+        output   = "",
+        mode     = "preferred",
+        position = "auto",
+        scale    = 1
+    })
+end
 
 ---------------------
 ---- MY PROGRAMS ----
