@@ -22,6 +22,8 @@
         "pulseaudio",
         "network",
         "power-profiles-daemon",
+        "backlight",
+        "battery",
         "cpu",
         "memory",
         "temperature",
