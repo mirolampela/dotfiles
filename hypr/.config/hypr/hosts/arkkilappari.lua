@@ -15,3 +15,8 @@ hl.monitor({
     position = "auto",
     scale    = 1
 })
+
+-- Autologin is enabled, so lock immediately on start
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("hyprlock")
+end)
