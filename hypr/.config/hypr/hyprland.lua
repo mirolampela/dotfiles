@@ -71,6 +71,15 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
+	-- Start hypridle with a host-specific config if one exists
+	local idle_conf = os.getenv("HOME") .. "/.config/hypr/hosts/" .. (hostname or "") .. "-hypridle.conf"
+	local f = io.open(idle_conf, "r")
+	if f then
+		f:close()
+		hl.exec_cmd("hypridle -c " .. idle_conf)
+	else
+		hl.exec_cmd("hypridle")
+	end
 end)
 
 -------------------------------
@@ -290,7 +299,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("vivaldi"))
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("code"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("codium"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 
 -- Move focus with mainMod + arrow keys
