@@ -123,7 +123,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 5,
+        gaps_out = 10,
 
         border_size = 4,
 
@@ -218,7 +218,14 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
-        preserve_split = true, -- You probably want this
+        preserve_split = true,
+        force_split = 2,
+        smart_resizing = true,
+        default_split_ratio = 1.0,
+        split_width_multiplier = 1.0,
+    },
+    layout = {
+        single_window_aspect_ratio = "16 9",
     },
 })
 
@@ -226,6 +233,8 @@ hl.config({
 hl.config({
     master = {
         new_status = "master",
+        orientation = "center",
+        mfact = 0,5,
     },
 })
 

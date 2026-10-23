@@ -1,0 +1,10 @@
+[Unit]
+Description=llama.cpp server (gpt-oss-20b)
+
+[Service]
+ExecStart=/usr/bin/llama-server -m /home/miro/.cache/huggingface/hub/models--ggml-org--gpt-oss-20b-GGUF/snapshots/15dcfc7e7c608c6161507211ed43c5b590801b4b/gpt-oss-20b-MXFP4.gguf -ngl 99 -c 32768 --jinja -fa on --host 127.0.0.1 --port 8080 --metrics
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

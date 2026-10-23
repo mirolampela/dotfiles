@@ -19,6 +19,7 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
+        "custom/llama",
         "custom/mouse",
         "pulseaudio",
         "network",
@@ -187,6 +188,15 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/llama": {
+        "exec": "~/.config/waybar/scripts/llama-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/llama-toggle.sh",
+        "on-click-right": "xdg-open http://127.0.0.1:8080",
+        "tooltip": true
     },
     "custom/mouse": {
         "exec": "~/.config/waybar/mouse.sh",
