@@ -19,6 +19,7 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
+        "custom/mouse",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -186,6 +187,17 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/mouse": {
+        "exec": "~/.config/waybar/mouse.sh",
+        "return-type": "json",
+        "interval": 60,
+        "signal": 8,
+        "on-scroll-up": "~/.config/waybar/mouse.sh up",
+        "on-scroll-down": "~/.config/waybar/mouse.sh down",
+        "on-click-right": "~/.config/waybar/mouse.sh toggle",
+        "on-click": "~/.config/waybar/mouse.sh menu",
+        "on-click-middle": "~/.config/waybar/mouse.sh reset"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

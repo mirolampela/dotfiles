@@ -396,8 +396,13 @@ hl.window_rule({
     float = true,
 })
 
--- MX Master 3S (Bolt receiver) scroll speed
+-- MX Master 3S (Bolt receiver): values saved by waybar/mouse.sh
+local mouse = { sensitivity = 0.0, scroll_factor = 0.3 }
+local ok, saved = pcall(dofile, "/home/miro/.local/state/hypr-mouse.lua")
+if ok and type(saved) == "table" then mouse = saved end
+
 hl.device({
     name = "logitech-usb-receiver-mouse",
-    scroll_factor = 0.3,
+    sensitivity = mouse.sensitivity,
+    scroll_factor = mouse.scroll_factor,
 })
