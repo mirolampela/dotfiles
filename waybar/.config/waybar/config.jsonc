@@ -110,8 +110,8 @@
 	"tooltip-format": "<tt>{calendar}</tt>",
 	"calendar": {
 		"format": {
-			"today": "<span color='#89b4fa'><b>{}</b></span>",
-			"weeks": "<span color='#6c7086'>{}</span>"
+			"today": "<span color='#7aa2f7'><b>{}</b></span>",
+			"weeks": "<span color='#565f89'>{}</span>"
 		},
 		"mode": "month",
 		"weeks-pos": "left",

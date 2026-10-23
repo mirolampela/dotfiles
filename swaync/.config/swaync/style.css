@@ -3,9 +3,9 @@
 }
 
 :root {
-  --cc-bg: rgba(30, 30, 46, 0.85);
+  --cc-bg: rgba(26, 27, 38, 0.85);
   --noti-border-color: rgba(205, 214, 244, 0.15);
-  --noti-bg: 30, 30, 46;
+  --noti-bg: 26, 27, 38;
   --noti-bg-alpha: 0.85;
   --noti-bg-darker: rgb(24, 24, 37);
   --noti-bg-hover: rgb(49, 50, 68);

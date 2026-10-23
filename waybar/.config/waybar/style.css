@@ -54,8 +54,8 @@ button:hover {
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #89b4fa;
-    color: #1e1e2e;
+    background-color: #7aa2f7;
+    color: #1a1b26;
     border-radius: 8px;
 }
 
@@ -88,8 +88,8 @@ button:hover {
 #workspaces,
 #custom-power,
 #mpd {
-    background: rgba(30, 30, 46, 0.85);
-    color: #cdd6f4;
+    background: rgba(26, 27, 38, 0.85);
+    color: #c0caf5;
     border-radius: 12px;
     padding: 2px 12px;
     margin: 4px 4px;
@@ -189,12 +189,12 @@ label:focus {
 }
 
 tooltip {
-    background: rgba(30, 30, 46, 0.95);
-    border: 1px solid #89b4fa;
+    background: rgba(26, 27, 38, 0.95);
+    border: 1px solid #7aa2f7;
     border-radius: 8px;
 }
 
 tooltip label {
-    color: #cdd6f4;
+    color: #c0caf5;
     padding: 4px 8px;
 }

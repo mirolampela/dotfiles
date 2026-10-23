@@ -127,8 +127,8 @@ hl.config({
         border_size = 4,
 
         col = {
-	    active_border = { colors = { "rgba(89b4faff)", "rgba(cba6f7ff)" }, angle = 45 },
-	    inactive_border = "rgba(45475aaa)"
+	    active_border = { colors = { "rgba(7aa2f7ff)", "rgba(bb9af7ff)" }, angle = 45 },
+	    inactive_border = "rgba(414868aa)"
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -394,4 +394,10 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+-- MX Master 3S (Bolt receiver) scroll speed
+hl.device({
+    name = "logitech-usb-receiver-mouse",
+    scroll_factor = 0.3,
 })
