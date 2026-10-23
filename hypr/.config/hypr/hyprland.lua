@@ -72,6 +72,7 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("swaync")
+    hl.exec_cmd("sleep 5 && sudo systemctl restart logid")
 	-- Start hypridle with a host-specific config if one exists
 	local idle_conf = os.getenv("HOME") .. "/.config/hypr/hosts/" .. (hostname or "") .. "-hypridle.conf"
 	local f = io.open(idle_conf, "r")

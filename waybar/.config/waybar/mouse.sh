@@ -46,12 +46,13 @@ case "$1" in
         sens=0.0; scroll=0.3
         apply ;;
     menu)
-        choice=$(printf "Preset: Default\nPreset: Precise\nPreset: Fast" \
-            | fuzzel --dmenu --prompt "Mouse: " --lines 3 --width 25)
+        choice=$(printf "Preset: Default\nPreset: Precise\nPreset: Fast\nReconnect mouse" \
+            | fuzzel --dmenu --prompt "Mouse: " --lines 4 --width 25)
         case "$choice" in
             "Preset: Default") sens=0.0;  scroll=0.3; apply ;;
             "Preset: Precise") sens=-0.3; scroll=0.2; apply ;;
             "Preset: Fast")    sens=0.4;  scroll=0.5; apply ;;
+            "Reconnect mouse") sudo systemctl restart logid ;;
         esac
         ;;
     *)
