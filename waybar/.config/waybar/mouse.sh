@@ -56,9 +56,6 @@ case "$1" in
         esac
         ;;
     *)
-        battery=""
-        path=$(upower -e | grep -i hidpp | head -n1)
-        [[ -n "$path" ]] && battery=$(upower -i "$path" | awk '/percentage/ {print $2}')
 
         hl() { printf "<span color='#7aa2f7'><b>%s</b></span>" "$1"; }
         if [[ "$mode" == "sens" ]]; then
@@ -69,7 +66,6 @@ case "$1" in
 
         icon=$'\uf245'
         tooltip="MX Master 3S\\nSensitivity: $sens\\nScroll factor: $scroll"
-        [[ -n "$battery" ]] && tooltip="$tooltip\\nBattery: $battery"
         tooltip="$tooltip\\n\\nScroll: adjust $active\\nRight click: switch target\\nClick: presets\\nMiddle click: reset"
         printf '{"text": "%s %s · %s", "tooltip": "%s"}\n' "$icon" "$s_txt" "$r_txt" "$tooltip"
         ;;
