@@ -210,25 +210,24 @@
         "on-click-middle": "~/.config/waybar/mouse.sh reset"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}% ",
-        "format-source-muted": "",
+        "format-bluetooth": "{volume}% {icon}\uf294 {format_source}",
+        "format-bluetooth-muted": "\uf6a9 {icon}\uf294 {format_source}",
+        "format-muted": "\uf6a9 {format_source}",
+        "format-source": "{volume}% \uf130",
+        "format-source-muted": "\uf131",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "\uf025",
+            "hands-free": "\uf025",
+            "headset": "\uf025",
+            "phone": "\uf095",
+            "portable": "\uf095",
+            "car": "\uf1b9",
+            "default": ["\uf026", "\uf027", "\uf028"]
         },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-    },
+        "on-click": "pavucontrol"
+    }
+,
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
