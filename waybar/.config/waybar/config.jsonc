@@ -211,7 +211,7 @@
     },
     "group/apps": {
         "orientation": "horizontal",
-        "modules": ["custom/steam", "custom/discord"]
+        "modules": ["custom/steam", "custom/discord", "custom/battlenet"]
     },
     "custom/steam": {
         "exec": "~/.config/waybar/apps.sh steam",
@@ -224,6 +224,12 @@
         "return-type": "json",
         "interval": 5,
         "on-click": "discord"
+    },
+    "custom/battlenet": {
+        "exec": "~/.config/waybar/apps.sh battlenet",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
