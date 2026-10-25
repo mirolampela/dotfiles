@@ -69,7 +69,7 @@ local menu = "fuzzel"
 hl.on("hyprland.start", function ()
 	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("sh -c 'while true; do waybar > /dev/null 2>&1; sleep 1; done'")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("swaync")
     hl.exec_cmd("sleep 5 && sudo systemctl restart logid")
