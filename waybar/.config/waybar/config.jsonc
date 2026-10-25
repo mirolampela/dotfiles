@@ -217,7 +217,8 @@
         "exec": "~/.config/waybar/apps.sh steam",
         "return-type": "json",
         "interval": 5,
-        "on-click": "steam"
+        "on-click": "steam",
+        "on-click-right": "~/.config/waybar/apps.sh steam menu"
     },
     "custom/discord": {
         "exec": "~/.config/waybar/apps.sh discord",

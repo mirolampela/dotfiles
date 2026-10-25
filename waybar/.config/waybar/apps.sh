@@ -18,6 +18,25 @@ entry="${APPS[$1]}"
 
 IFS='|' read -r name icon procs pattern <<< "$entry"
 
+# Right-click menus: apps.sh <id> menu
+if [[ "$2" == "menu" ]]; then
+    case "$1" in
+        steam)
+            choice=$(printf "Library\nStore\nFriends\nDownloads\nSettings\nExit Steam" \
+                | fuzzel --dmenu --prompt "Steam: " --lines 6 --width 20)
+            case "$choice" in
+                "Library")    steam steam://open/games ;;
+                "Store")      steam steam://store ;;
+                "Friends")    steam steam://open/friends ;;
+                "Downloads")  steam steam://open/downloads ;;
+                "Settings")   steam steam://open/settings ;;
+                "Exit Steam") steam steam://exit ;;
+            esac
+            ;;
+    esac
+    exit 0
+fi
+
 running=false
 for p in $procs; do
     pgrep -x "$p" > /dev/null && running=true
