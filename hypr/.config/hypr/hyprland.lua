@@ -416,3 +416,7 @@ hl.device({
     sensitivity = mouse.sensitivity,
     scroll_factor = mouse.scroll_factor,
 })
+
+
+-- Discord push-to-talk via GlobalShortcuts portal (mouse side button = F13 via logid)
+hl.bind("mouse:275", hl.dsp.global("discord:discord-push-to-talk"), { bypass = true })

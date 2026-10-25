@@ -248,7 +248,9 @@
             "car": "\uf1b9",
             "default": ["\uf026", "\uf027", "\uf028"]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     }
 ,
     "custom/media": {
