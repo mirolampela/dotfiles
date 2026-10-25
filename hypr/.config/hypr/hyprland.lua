@@ -419,4 +419,4 @@ hl.device({
 
 
 -- Discord push-to-talk via GlobalShortcuts portal (mouse side button = F13 via logid)
-hl.bind("mouse:275", hl.dsp.global("discord:discord-push-to-talk"), { bypass = true })
+hl.bind("mouse:275", hl.dsp.global("discord:discord-push-to-talk"), { bypass = true, non_consuming = true })
