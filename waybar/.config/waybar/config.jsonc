@@ -32,7 +32,7 @@
         "temperature",
         "keyboard-state",
         "clock",
-        "tray",
+        "group/apps",
         "custom/power"
     ],
     // Modules configuration
@@ -208,6 +208,22 @@
         "on-click-right": "~/.config/waybar/mouse.sh toggle",
         "on-click": "~/.config/waybar/mouse.sh menu",
         "on-click-middle": "~/.config/waybar/mouse.sh reset"
+    },
+    "group/apps": {
+        "orientation": "horizontal",
+        "modules": ["custom/steam", "custom/discord"]
+    },
+    "custom/steam": {
+        "exec": "~/.config/waybar/apps.sh steam",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "steam"
+    },
+    "custom/discord": {
+        "exec": "~/.config/waybar/apps.sh discord",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "discord"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",

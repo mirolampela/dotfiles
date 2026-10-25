@@ -209,3 +209,24 @@ tooltip label {
 #custom-llama.loading { color: #f9e2af; }
 #custom-llama.running { color: #a6e3a1; }
 #custom-llama.busy    { color: #89b4fa; }
+
+/* App launcher group */
+#apps {
+    background: rgba(26, 27, 38, 0.85);
+    border-radius: 12px;
+    padding: 2px 6px;
+    margin: 4px 4px;
+}
+
+#apps label {
+    padding: 0 6px;
+    font-size: 15px;
+}
+
+#apps .stopped {
+    color: #565f89;
+}
+
+#apps .running {
+    color: #7aa2f7;
+}
