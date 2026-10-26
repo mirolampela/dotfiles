@@ -232,7 +232,8 @@
         "exec": "~/.config/waybar/apps.sh battlenet",
         "return-type": "json",
         "interval": 5,
-        "on-click": "env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1"
+        "on-click": "env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1",
+        "on-click-right": "~/.config/waybar/apps.sh battlenet menu"
     },
     "custom/spotify": {
         "exec": "~/.config/waybar/apps.sh spotify",

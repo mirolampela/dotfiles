@@ -45,6 +45,15 @@ if [[ "$2" == "menu" ]]; then
             esac
             ;;
 
+        battlenet)
+            choice=$(printf "Open\nQuit Battle.net" \
+                | fuzzel --dmenu --prompt "Battle.net: " --lines 2 --width 22)
+            case "$choice" in
+                "Open")            setsid -f env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1 > /dev/null 2>&1 ;;
+                "Quit Battle.net") pkill -f 'Battle\.net' ;;
+            esac
+            ;;
+
     esac
     exit 0
 fi
@@ -55,6 +64,13 @@ for p in $procs; do
 done
 if [[ -n "$pattern" ]] && pgrep -f "$pattern" > /dev/null; then
     running=true
+fi
+
+# Apps that are hidden from the bar when not running
+HIDE_WHEN_STOPPED=(battlenet)
+if ! $running && [[ " ${HIDE_WHEN_STOPPED[*]} " == *" $1 "* ]]; then
+    echo '{"text": ""}'
+    exit 0
 fi
 
 if $running; then
