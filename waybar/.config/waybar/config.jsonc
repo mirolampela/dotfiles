@@ -225,7 +225,8 @@
         "exec": "~/.config/waybar/apps.sh discord",
         "return-type": "json",
         "interval": 5,
-        "on-click": "discord"
+        "on-click": "discord",
+        "on-click-right": "~/.config/waybar/apps.sh discord menu"
     },
     "custom/battlenet": {
         "exec": "~/.config/waybar/apps.sh battlenet",

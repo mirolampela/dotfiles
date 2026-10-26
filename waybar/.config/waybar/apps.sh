@@ -33,6 +33,17 @@ if [[ "$2" == "menu" ]]; then
                 "Exit Steam") steam steam://exit ;;
             esac
             ;;
+        discord)
+            choice=$(printf "Open\nFriends\nRestart Discord\nQuit Discord" \
+                | fuzzel --dmenu --prompt "Discord: " --lines 4 --width 20)
+            case "$choice" in
+                "Open")            discord ;;
+                "Friends")         discord "discord://-/channels/@me" ;;
+                "Restart Discord") pkill -x Discord; sleep 2; setsid -f discord > /dev/null 2>&1 ;;
+                "Quit Discord")    pkill -x Discord ;;
+            esac
+            ;;
+
     esac
     exit 0
 fi
