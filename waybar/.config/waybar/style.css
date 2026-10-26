@@ -230,3 +230,20 @@ tooltip label {
 #apps .running {
     color: #7aa2f7;
 }
+
+/* App launcher: brand colors when running */
+#custom-steam.running {
+    color: #66c0f4;
+}
+
+#custom-discord.running {
+    color: #5865f2;
+}
+
+#custom-spotify.running {
+    color: #1db954;
+}
+
+#custom-battlenet.running {
+    color: #148eff;
+}

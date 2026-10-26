@@ -10,6 +10,7 @@
 declare -A APPS=(
     [steam]="Steam|"$'\uf1b6'"|steam|"
     [discord]="Discord|"$'\uf392'"|Discord discord|"
+    [spotify]="Spotify|"$'\uf1bc'"|spotify|"
     [battlenet]="Battle.net|"$'\uf11b'"||lutris-wrapper Battle.net"
 )
 

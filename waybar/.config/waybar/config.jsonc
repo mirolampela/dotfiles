@@ -212,7 +212,7 @@
     },
     "group/apps": {
         "orientation": "horizontal",
-        "modules": ["custom/steam", "custom/discord", "custom/battlenet"]
+        "modules": ["custom/steam", "custom/discord", "custom/spotify", "custom/battlenet"]
     },
     "custom/steam": {
         "exec": "~/.config/waybar/apps.sh steam",
@@ -233,6 +233,12 @@
         "return-type": "json",
         "interval": 5,
         "on-click": "env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1"
+    },
+    "custom/spotify": {
+        "exec": "~/.config/waybar/apps.sh spotify",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "spotify-launcher"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
