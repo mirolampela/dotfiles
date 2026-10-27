@@ -41,7 +41,7 @@ if [[ "$2" == "menu" ]]; then
                 "Open")            discord ;;
                 "Friends")         discord "discord://-/channels/@me" ;;
                 "Restart Discord") pkill -x Discord; sleep 2; setsid -f discord > /dev/null 2>&1 ;;
-                "Quit Discord")    pkill -x Discord ;;
+                "Quit Discord")    pkill -x Discord; for i in $(seq 10); do pgrep -x Discord > /dev/null || break; sleep 0.5; done; pkill -9 -x Discord 2> /dev/null; pkill -RTMIN+9 waybar ;;
             esac
             ;;
 

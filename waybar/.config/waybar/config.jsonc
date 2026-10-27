@@ -217,6 +217,7 @@
     },
     "custom/steam": {
         "exec": "~/.config/waybar/apps.sh steam",
+        "signal": 9,
         "return-type": "json",
         "interval": 5,
         "on-click": "steam",
@@ -224,6 +225,7 @@
     },
     "custom/discord": {
         "exec": "~/.config/waybar/apps.sh discord",
+        "signal": 9,
         "return-type": "json",
         "interval": 5,
         "on-click": "discord",
@@ -231,6 +233,7 @@
     },
     "custom/battlenet": {
         "exec": "~/.config/waybar/apps.sh battlenet",
+        "signal": 9,
         "return-type": "json",
         "interval": 5,
         "on-click": "env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1",
@@ -238,6 +241,7 @@
     },
     "custom/spotify": {
         "exec": "~/.config/waybar/apps.sh spotify",
+        "signal": 9,
         "return-type": "json",
         "interval": 5,
         "on-click": "spotify-launcher"
