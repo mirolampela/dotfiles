@@ -5,7 +5,7 @@ hl.monitor({
     output   = "eDP-1",
     mode     = "1920x1080@60",
     position = "0x0",
-    scale    = 1.25
+    scale    = 1
 })
 
 -- Any other (external) monitor: auto-placed next to the laptop
@@ -20,3 +20,5 @@ hl.monitor({
 hl.on("hyprland.start", function ()
     hl.exec_cmd("hyprlock")
 end)
+
+hl.config({ xwayland = { force_zero_scaling = true } })
