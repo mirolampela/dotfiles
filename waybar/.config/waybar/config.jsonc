@@ -17,7 +17,6 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
         "custom/llama",
         "custom/mouse",
@@ -30,7 +29,6 @@
         "cpu",
         "memory",
         "temperature",
-        "keyboard-state",
         "clock",
         "group/apps",
         "custom/power"
