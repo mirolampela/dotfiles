@@ -283,6 +283,10 @@
     "on-click": "~/.config/waybar/power.sh"
 },
     "mpris": {
+        "player": "spotify",
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({ window = \"class:(?i)spotify\" })'",
+        "on-click-middle": "playerctl -p spotify play-pause",
+        "on-click-right": "playerctl -p spotify next",
 	"format" : "{player_icon} {artist} - {title}",
 	"format-paused": "{status_icon} {artist} - {title}",
 	"max-length": 40,
