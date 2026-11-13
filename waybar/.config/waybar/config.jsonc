@@ -242,7 +242,8 @@
         "signal": 9,
         "return-type": "json",
         "interval": 5,
-        "on-click": "spotify-launcher"
+        "on-click": "~/.config/waybar/apps.sh spotify focus",
+        "on-click-right": "~/.config/waybar/apps.sh spotify menu"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",

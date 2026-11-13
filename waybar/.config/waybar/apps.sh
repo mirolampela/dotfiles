@@ -19,6 +19,16 @@ entry="${APPS[$1]}"
 
 IFS='|' read -r name icon procs pattern <<< "$entry"
 
+# Left-click for Spotify: focus if running (also from scratchpad), otherwise launch
+if [[ "$1" == "spotify" && "$2" == "focus" ]]; then
+    if pgrep -x spotify > /dev/null; then
+        hyprctl dispatch 'hl.dsp.focus({ window = "class:(?i)spotify" })'
+    else
+        setsid -f spotify-launcher > /dev/null 2>&1
+    fi
+    exit 0
+fi
+
 # Right-click menus: apps.sh <id> menu
 if [[ "$2" == "menu" ]]; then
     case "$1" in
@@ -51,6 +61,18 @@ if [[ "$2" == "menu" ]]; then
             case "$choice" in
                 "Open")            setsid -f env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1 > /dev/null 2>&1 ;;
                 "Quit Battle.net") pkill -f 'Battle\.net' ;;
+            esac
+            ;;
+
+        spotify)
+            choice=$(printf "Show Spotify\nPlay/Pause\nNext\nPrevious\nQuit Spotify" \
+                | fuzzel --dmenu --prompt "Spotify: " --lines 5 --width 20)
+            case "$choice" in
+                "Show Spotify") hyprctl dispatch 'hl.dsp.focus({ window = "class:(?i)spotify" })' ;;
+                "Play/Pause")   playerctl -p spotify play-pause ;;
+                "Next")         playerctl -p spotify next ;;
+                "Previous")     playerctl -p spotify previous ;;
+                "Quit Spotify") pkill -x spotify; sleep 1; pkill -RTMIN+9 waybar ;;
             esac
             ;;
 
