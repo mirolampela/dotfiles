@@ -31,6 +31,25 @@ fi
 
 # Right-click menus: apps.sh <id> menu
 if [[ "$2" == "menu" ]]; then
+    # When the app is not running, only offer to launch it
+    is_running=false
+    for p in $procs; do
+        pgrep -x "$p" > /dev/null && is_running=true
+    done
+    [[ -n "$pattern" ]] && pgrep -f "$pattern" > /dev/null && is_running=true
+
+    if ! $is_running; then
+        declare -A LAUNCH=(
+            [steam]="steam"
+            [discord]="discord"
+            [spotify]="spotify-launcher"
+            [battlenet]="env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1"
+        )
+        choice=$(printf "Launch %s" "$name" | fuzzel --dmenu --prompt "$name: " --lines 1 --width 22)
+        [[ -n "$choice" && -n "${LAUNCH[$1]}" ]] && setsid -f ${LAUNCH[$1]} > /dev/null 2>&1
+        exit 0
+    fi
+
     case "$1" in
         steam)
             choice=$(printf "Library\nStore\nFriends\nDownloads\nSettings\nExit Steam" \
